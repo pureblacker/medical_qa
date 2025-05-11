@@ -1,0 +1,142 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f8ff; /* 浅蓝灰背景 */
+    color: #2c3e50;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 800px;
+    width: 90%;
+    padding: 40px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 头部标题 */
+header h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #1a5f7a; /* 深蓝标题 */
+}
+
+/* 输入表单 */
+.input-form {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+#question {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: 2px solid #1a5f7a;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#question:focus {
+    border-color: #2c7893;
+}
+
+#ask-button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #fff;
+    background: #1a5f7a;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#ask-button:hover {
+    background: #2c7893;
+}
+
+.spinner {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) translateX(10px);
+    width: 20px;
+    height: 20px;
+    border: 3px solid #ccc;
+    border-top-color: #1a5f7a;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.thinking-message {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f0f8ff;
+    border: 2px dashed #1a5f7a;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    color: #1a5f7a;
+}
+
+.chat-section {
+    margin-top: 40px;
+    padding: 20px;
+    border: 2px solid #e6eef7;
+    border-radius: 8px;
+}
+
+.message {
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    line-height: 1.6;
+}
+
+.user {
+    background: #e6eef7;
+    color: #2c3e50;
+}
+
+.ai {
+    background: #f0f8ff;
+    color: #1a5f7a;
+}
+
+.context-section {
+    margin-top: 40px;
+    padding: 20px;
+    border: 2px solid #e6eef7;
+    border-radius: 8px;
+}
+
+.context-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.context-list li {
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    background: #f0f8ff;
+    border-radius: 6px;
+    color: #2c3e50;
+}

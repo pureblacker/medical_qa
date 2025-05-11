@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>医疗智能问答系统</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js "></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>医疗智能问答系统</h1>
+        </header>
+
+        <form id="ask-form" class="input-form">
+            <input type="text" id="question" name="question" placeholder="请输入您的问题..." required />
+            <button type="submit" id="ask-button">提问</button>
+        </form>
+        <form >
+            <div id="loading" class="spinner" style="display: none;"></div>
+            <div id="thinking" class="thinking-message" style="display: none;">模型正在回答...</div>
+        </form>
+
+        <section id="chat-history" class="chat-section"></section>
+
+        <section id="context-section" class="context-section" style="display: none;">
+            <h2>RAG 检索内容</h2>
+            <ul id="rag-context" class="context-list"></ul>
+            <h2>KG 检索内容</h2>
+            <ul id="kg-context" class="context-list"></ul>
+        </section>
+    </div>
+
+    <script src="/static/main.js"></script>
+</body>
+</html>

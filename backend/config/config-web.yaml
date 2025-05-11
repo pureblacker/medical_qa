@@ -1,0 +1,34 @@
+# 知识库目录，存放知识库文件，如各种.pdf, .word文件
+knowledge-path: ./backend/knowledges
+
+# 向量库地址，存放文本向量文件
+faiss-path: ./backend/faiss_index
+
+  
+model:
+  graph-entity:
+    # 知识图谱中检索实体时的搜索主键，即匹配这个键对应的值，根据知识图谱中实体的可检索属性
+    search-key: 名称
+
+  # 编码模型配置
+  embedding: 
+    # 构建知识库时用于文本向量化的模型路径，这里是一个本地路径
+    path: backend/model
+    name: bge-large-zh-v1.5
+  
+  # 重排模型配置
+  rerank:
+    path: backend/model
+    name: bge-reranker-v2-m3
+
+# 知识图谱配置
+database:
+  neo4j:
+    url: bolt://localhost:7687
+    database: medical-db
+    username: neo4j
+    # 注意数字用引号引起来
+    password: "12345678"
+    # 定义数据库存在的节点标签和关系类型，用于检索
+    node-label: ['一级科室', '二级科室', '其他',"检查手段","治疗方案","生产商","疾病","症状","药物","食物","食谱"]
+    relationship-type: ['好评药物', '宜吃', '属于', '常用药物', '并发症','忌吃','所属科室','推荐食谱','治疗方法','生产药品','症状','诊断建议']
